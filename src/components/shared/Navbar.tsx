@@ -1,14 +1,8 @@
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+
 import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
+import NavMenuList from "./NavigationMenu";
 
 const Navbar = () => {
   return (
@@ -22,33 +16,8 @@ const Navbar = () => {
         </div>
 
         {/* navigation menu */}
-        <div>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/news">News</NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[200px] w-full">
-                  <ul className="px-4 py-2 ">
-                    <li>
-                      <NavigationMenuLink>Global News</NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>Breaking News</NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>Sports</NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/about">About</NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+        <div className="hidden lg:flex">
+          <NavMenuList />
         </div>
 
         {/* theme switcher and auth button */}
