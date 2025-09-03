@@ -1,6 +1,3 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,85 +6,43 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../ui/navigation-menu";
-import Link from "next/link";
+import CustomLink from "./CustomLink";
 
 const NavMenuList = () => {
-  const pathName = usePathname();
-  console.log(pathName);
-
   return (
     <NavigationMenu>
       <NavigationMenuList className="space-x-6 *:font-medium *:text-gray-600">
         <NavigationMenuItem>
-          <Link
-            className={`${pathName === "/news" ? "text-red-500" : ""}`}
-            href="/news"
-          >
-            News
-          </Link>
+          <CustomLink href="/news">News</CustomLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuTrigger className="px-0 py-0 hover:bg-transparent">
-            <Link
-              className={`${pathName === "/services" ? "text-red-500" : ""}`}
-              href="/services"
-            >
-              Services
-            </Link>
+            <CustomLink href="/services">Services</CustomLink>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="px-4 py-5 min-w-48 space-y-2">
               <li>
-                <Link
-                  className={`${
-                    pathName === "/news/global-news" ? "text-red-500" : ""
-                  }`}
-                  href="/news/global-news"
-                >
-                  Global News
-                </Link>
+                <CustomLink href="/news/global-news">Global News</CustomLink>
               </li>
               <li>
-                <Link
-                  className={`${
-                    pathName === "/news/breaking-news" ? "text-red-500" : ""
-                  }`}
-                  href="/news/breaking-news"
-                >
+                <CustomLink href="/news/breaking-news">
                   Breaking News
-                </Link>
+                </CustomLink>
               </li>
               <li>
-                <Link
-                  className={`${
-                    pathName === "/news/sports-news" ? "text-red-500" : ""
-                  }`}
-                  href="/news/sports-news"
-                >
-                  Sports
-                </Link>
+                <CustomLink href="/news/sports-news">Sports</CustomLink>
               </li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link
-            className={`${pathName === "/about" ? "text-red-500" : ""}`}
-            href="/about"
-          >
-            About
-          </Link>
+          <CustomLink href="/about">About</CustomLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link
-            className={`${pathName === "/contact" ? "text-red-500" : ""}`}
-            href="/contact"
-          >
-            Contact
-          </Link>
+          <CustomLink href="/contact">Contact</CustomLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

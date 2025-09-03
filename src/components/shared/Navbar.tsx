@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
 import NavMenuList from "./NavigationMenu";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   return (
@@ -21,7 +22,7 @@ const Navbar = () => {
         </div>
 
         {/* theme switcher and auth button */}
-        <div className="flex items-center gap-x-5">
+        <div className="hidden lg:flex items-center gap-x-5">
           <div className="flex items-center space-x-2">
             <label htmlFor="airplane-mode">Dark Mode</label>
             <Switch id="airplane-mode" />
@@ -31,6 +32,11 @@ const Navbar = () => {
               Login
             </Button>
           </div>
+        </div>
+
+        {/* mobile menu */}
+        <div className="lg:hidden flex">
+          <MobileMenu />
         </div>
       </div>
     </nav>
