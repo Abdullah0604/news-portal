@@ -22,8 +22,9 @@ const NewsList = () => {
   }, [category, search]);
   return (
     <div>
-      <div className="my-8 flex  justify-between items-center gap-8">
+      <div className="my-8 flex flex-col md:flex-row justify-between items-center gap-8 ">
         <Searchbar onSearch={setSearch} />
+
         <CategoryFilter onCategory={setCategory} />
       </div>
       <div>
